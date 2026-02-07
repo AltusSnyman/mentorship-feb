@@ -1,78 +1,116 @@
 import React from 'react';
-import Button from './ui/Button';
+import { Check } from 'lucide-react';
 
-const offerItems = [
-    { name: 'Unlimited "Smart Hybrid" License', value: '$497/mo' },
-    { name: 'The 5-Day Launch Sprint', value: '$997' },
-    { name: 'Vibe Coding Academy', value: '$2,000' },
-    { name: 'N8N Blueprints Vault', value: '$1,500' },
+const stackItems = [
+    {
+        title: 'The "Smart Hybrid" Enterprise License',
+        subtitle: '(Unlimited Sub-Accounts + Toll-Free Line Setup)',
+        value: '$497/mo',
+    },
+    {
+        title: 'The "Vibe Coding" Automation Vault',
+        subtitle: '(40+ N8N Workflows + 120+ Industry Snapshots)',
+        value: '$3,500',
+    },
+    {
+        title: 'The Agency Growth Protocol',
+        subtitle: '(Pipeline Architecture + Consultative Sales Framework)',
+        value: '$2,500',
+    },
+    {
+        title: 'The 5-Day Launch Sprint',
+        subtitle: '(Implementation Guide + Weekly "Fresh Drop" Updates)',
+        value: '$997',
+    },
 ];
 
 export default function OfferStack() {
     return (
-        <section className="py-24 bg-[#080808] relative overflow-hidden flex items-center justify-center">
+        <section className="py-24 bg-[#080808] flex items-center justify-center font-mono">
+            <div className="w-full max-w-[800px] px-6">
 
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-accent/5 blur-[150px] pointer-events-none"></div>
-
-            <div className="relative z-10 max-w-5xl w-full mx-6">
-
-                {/* Receipt Container */}
-                <div className="bg-surface border border-accent/30 rounded-lg p-8 md:p-14 shadow-[0_0_50px_rgba(0,240,255,0.1)] relative reveal">
-
-                    {/* Corner Accents */}
-                    <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-accent"></div>
-                    <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-accent"></div>
-                    <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-accent"></div>
-                    <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-accent"></div>
-
+                {/* Vault Container */}
+                <div
+                    className="relative bg-[#111111] border border-[#00F0FF] rounded-2xl p-10 overflow-hidden shadow-[0_0_40px_rgba(0,240,255,0.15)]"
+                >
                     {/* Header */}
-                    <div className="text-center mb-12 border-b border-gray-800 pb-8">
-                        <h2 className="text-3xl md:text-4xl font-bold text-white uppercase tracking-widest mb-3">The Agency Infrastructure Bundle</h2>
-                        <p className="text-gray-500 font-mono text-base">Official Receipt • Founders Access</p>
+                    <div className="text-center border-b border-gray-800 pb-8 mb-8">
+                        <h2 className="text-2xl md:text-3xl font-bold text-white tracking-wider uppercase mb-2">
+                            The Agency Infrastructure Bundle
+                        </h2>
+                        <div className="h-1 w-24 bg-[#00F0FF] mx-auto rounded-full shadow-[0_0_15px_#00F0FF]"></div>
                     </div>
 
-                    {/* Line Items */}
-                    <div className="space-y-8 mb-12 font-mono text-base md:text-lg">
-                        {offerItems.map((item, index) => (
-                            <div key={index} className={`flex items-center justify-between group reveal reveal-delay-${index + 1}`}>
-                                <span className="text-gray-300 relative z-10 bg-surface pr-4">{item.name}</span>
-                                {/* Dotted Line */}
-                                <div className="flex-1 border-b-2 border-dashed border-gray-800 mx-4 relative top-1"></div>
-                                <span className="text-accent relative z-10 bg-surface pl-4">{item.value}</span>
+                    {/* Stack Components */}
+                    <div className="space-y-6 mb-12">
+                        {stackItems.map((item, index) => (
+                            <div key={index} className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 rounded-lg hover:bg-white/5 transition-colors border border-transparent hover:border-[#00F0FF]/30">
+                                <div className="flex items-start gap-4">
+                                    <div className="mt-1 min-w-[24px]">
+                                        <Check className="w-6 h-6 text-[#00F0FF] drop-shadow-[0_0_5px_rgba(0,240,255,0.8)]" strokeWidth={3} />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-white font-bold text-lg leading-tight">{item.title}</h3>
+                                        <p className="text-[#A3A3A3] text-sm mt-1">{item.subtitle}</p>
+                                    </div>
+                                </div>
+                                <div className="text-[#E6E6E6] font-bold text-lg md:text-right pl-10 md:pl-0">
+                                    {item.value}
+                                </div>
                             </div>
                         ))}
                     </div>
 
-                    {/* Totals */}
-                    <div className="bg-[#050505] p-10 rounded border border-gray-800 text-center space-y-6 reveal reveal-delay-3">
-                        <div className="flex justify-between text-gray-500 text-base md:text-lg px-4">
-                            <span>Total Value</span>
-                            <span className="line-through decoration-red-500 decoration-2">$10,000+</span>
-                        </div>
-                        <div className="flex justify-between text-gray-500 text-base md:text-lg px-4">
-                            <span>Standard Price</span>
-                            <span className="line-through decoration-red-500 decoration-2">$497/mo</span>
+                    {/* Divider */}
+                    <div className="border-t border-dashed border-gray-700 my-8"></div>
+
+                    {/* Pricing Breakdown */}
+                    <div className="space-y-4 text-center mb-10">
+                        {/* Total Value */}
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-lg">
+                            <span className="text-[#A3A3A3] uppercase tracking-widest">Total Value</span>
+                            <span className="text-red-500 font-bold line-throughDecoration-red-500 line-through decoration-2">
+                                $11,490+
+                            </span>
                         </div>
 
-                        <div className="py-8 border-t border-gray-800 mt-6">
-                            <p className="text-gray-400 text-base uppercase tracking-widest mb-4">Your Founder's Rate</p>
-                            <div className="text-[7rem] md:text-[10rem] font-extrabold text-white tracking-tighter flex items-end justify-center gap-4 leading-none" style={{ textShadow: '0 0 40px rgba(59, 130, 246, 0.3)' }}>
-                                $97 <span className="text-2xl md:text-3xl text-gray-500 font-normal mb-4 md:mb-6">/ Month</span>
-                            </div>
+                        {/* Standard Price */}
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-lg">
+                            <span className="text-[#A3A3A3] uppercase tracking-widest">Standard Market Price</span>
+                            <span className="text-gray-500 font-bold line-through decoration-2">
+                                $497/mo
+                            </span>
                         </div>
                     </div>
 
-                    {/* CTA */}
-                    <div className="mt-8 reveal reveal-delay-4">
-                        <a href="https://github.com/AltusSnyman/mentorship-feb.git" className="block w-full text-center py-5 bg-accent text-black font-extrabold text-lg uppercase tracking-wider hover:bg-[#33F4FF] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] transition-all duration-300">
+                    {/* The Anchor Price */}
+                    <div className="text-center mb-10">
+                        <p className="text-[#00F0FF] text-sm uppercase tracking-[0.2em] mb-4 text-glow">
+                            Your Founder's Rate
+                        </p>
+                        <div className="text-6xl md:text-[4rem] font-extrabold text-[#00F0FF] leading-none tracking-tighter drop-shadow-[0_0_20px_rgba(0,240,255,0.4)]">
+                            $97 <span className="text-3xl text-[#E6E6E6] font-normal align-middle">/ Month</span>
+                        </div>
+                    </div>
+
+                    {/* CTA Button */}
+                    <div className="text-center">
+                        <a
+                            href="https://github.com/AltusSnyman/mentorship-feb.git"
+                            className="inline-block w-full md:w-auto px-12 py-5 bg-[#00F0FF] text-black font-extrabold text-xl rounded-lg hover:bg-[#33F4FF] hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(0,240,255,0.5)] uppercase tracking-wide"
+                        >
                             Claim My Founder's Rate
                         </a>
-                        <div className="flex justify-center items-center gap-2 mt-4 text-xs text-gray-500">
-                            <span className="w-2 h-2 rounded-full bg-green-500"></span>
-                            <span>Secure Checkout • Cancel Anytime</span>
-                        </div>
+                        <p className="mt-4 text-[#A3A3A3] text-sm">
+                            (Save $400/mo Instantly)
+                        </p>
                     </div>
+
+                    {/* Decorative Corner Accents */}
+                    <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-[#00F0FF] rounded-tl-2xl opacity-50"></div>
+                    <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-[#00F0FF] rounded-tr-2xl opacity-50"></div>
+                    <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-[#00F0FF] rounded-bl-2xl opacity-50"></div>
+                    <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-[#00F0FF] rounded-br-2xl opacity-50"></div>
 
                 </div>
             </div>
