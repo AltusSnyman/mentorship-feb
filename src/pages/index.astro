@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero';
+import AuthorityBar from '../components/AuthorityBar.astro';
+import Problem from '../components/Problem';
+import Mechanism from '../components/Mechanism';
+import WallOfTruth from '../components/WallOfTruth';
+import OfferStack from '../components/OfferStack';
+import Curriculum from '../components/Curriculum';
+import Guarantee from '../components/Guarantee';
+import Footer from '../components/Footer';
+import FAQ from '../components/FAQ';
+---
+
+<Layout title="AI Agency Mentorship - Launch Your Conversion Engine">
+	
+	{/* Phase 1: Foundation */}
+	<Hero client:load />
+	<AuthorityBar />
+
+	{/* Phase 2: The Problem */}
+	<Problem client:visible />
+
+	{/* Phase 3: The Mechanism */}
+	<Mechanism client:visible />
+
+    {/* Wall of Truth (Testimonials) */}
+    <WallOfTruth client:visible />
+
+	{/* Phase 4: The Offer */}
+	<OfferStack client:visible />
+
+	{/* Phase 5: Curriculum & Guarantee */}
+	<Curriculum client:visible />
+	<Guarantee client:visible />
+
+	{/* FAQ */}
+	<FAQ client:load />
+
+	{/* Footer */}
+	<Footer />
+
+</Layout>

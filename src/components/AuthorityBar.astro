@@ -1,0 +1,108 @@
+---
+import LogoMarquee from './LogoMarquee';
+import TestimonialMarquee from './TestimonialMarquee';
+
+const stats = [
+  { label: 'Active Members', value: '1,297', numericValue: 1297, suffix: '' },
+  { label: 'Agencies Launched', value: '69', numericValue: 69, suffix: '' },
+  { label: 'Production-Ready Blueprints', value: '40+', numericValue: 40, suffix: '+' },
+];
+---
+
+<div class="relative z-20 w-full bg-[#0A0A0A] border-y border-[#222]">
+  <div class="max-w-7xl mx-auto px-6 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-[#222] reveal" id="stats-grid">
+      {stats.map((stat, i) => (
+        <div class="flex flex-col items-center justify-center py-4 md:py-0">
+          <span class="text-white text-5xl md:text-6xl font-extrabold tracking-tight mb-2 font-sans">
+             [ <span
+               class="text-white count-up"
+               data-target={stat.numericValue}
+               data-suffix={stat.suffix}
+               data-index={i}
+             >0</span> ]
+          </span>
+          <span class="text-gray-500 text-sm md:text-base font-medium tracking-widest uppercase">
+            {stat.label}
+          </span>
+        </div>
+      ))}
+    </div>
+
+    {/* Logo Marquee Section */}
+    <div class="pt-12 border-t border-[#222] mt-10 reveal">
+        <p class="text-center text-xs font-mono text-secondary mb-8 tracking-widest uppercase opacity-60">Powering Next-Gen Agencies</p>
+        <LogoMarquee client:load />
+    </div>
+
+     {/* Social Proof Marquee Section */}
+     <div class="pt-12 border-t border-[#222] mt-12 reveal">
+        <p class="text-center text-xs font-mono text-secondary mb-8 tracking-widest uppercase opacity-60">Community Wins</p>
+        <TestimonialMarquee client:load />
+    </div>
+  </div>
+</div>
+
+<script>
+  function initPageAnimations() {
+    // ── Count-Up Animation ──
+    const countElements = document.querySelectorAll('.count-up');
+    if (countElements.length) {
+      const countObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target as HTMLElement;
+              if (el.dataset.animated === 'true') return;
+              el.dataset.animated = 'true';
+
+              const target = parseInt(el.dataset.target || '0', 10);
+              const suffix = el.dataset.suffix || '';
+              const duration = 2000;
+              const startTime = performance.now();
+
+              function easeOutCubic(t: number): number {
+                return 1 - Math.pow(1 - t, 3);
+              }
+
+              function step(currentTime: number) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const currentValue = Math.round(easeOutCubic(progress) * target);
+                el.textContent = currentValue.toLocaleString() + suffix;
+                if (progress < 1) requestAnimationFrame(step);
+              }
+
+              requestAnimationFrame(step);
+              countObserver.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+      countElements.forEach((el) => countObserver.observe(el));
+    }
+
+    // ── Global Scroll-Reveal ──
+    const revealElements = document.querySelectorAll('.reveal');
+    if (revealElements.length) {
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      );
+      revealElements.forEach((el) => revealObserver.observe(el));
+    }
+  }
+
+  // Run on initial load and Astro page transitions
+  document.addEventListener('DOMContentLoaded', initPageAnimations);
+  document.addEventListener('astro:page-load', initPageAnimations);
+  if (document.readyState !== 'loading') initPageAnimations();
+</script>

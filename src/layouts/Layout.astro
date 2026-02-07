@@ -1,0 +1,70 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="AI Agency Mentorship - Build Your Conversion Engine" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | AI Agency Mentorship</title>
+
+		<!-- Meta Pixel Code -->
+		<script is:inline>
+			!function(f,b,e,v,n,t,s)
+			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+			n.queue=[];t=b.createElement(e);t.async=!0;
+			t.src=v;s=b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t,s)}(window, document,'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+			fbq('init', '1157587412986407');
+			fbq('track', 'PageView');
+		</script>
+		<!-- End Meta Pixel Code -->
+
+		<!-- Meta Pixel Code 2 -->
+		<script is:inline>
+			!function(f,b,e,v,n,t,s)
+			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+			n.queue=[];t=b.createElement(e);t.async=!0;
+			t.src=v;s=b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t,s)}(window, document,'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+			fbq('init', '1423308999460892');
+			fbq('track', 'PageView');
+		</script>
+		<!-- End Meta Pixel Code 2 -->
+
+		<!-- LeadConnector Chat Widget -->
+		<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6807407a30666b2d3727d268" async defer></script>
+	</head>
+	<body class="bg-main text-primary relative min-h-screen overflow-x-hidden selection:bg-accent/30 selection:text-white font-sans antialiased">
+		
+		{/* Strict Black Theme Background - #050505 is set in tailwind.config.mjs as bg-main */}
+		<div class="fixed inset-0 bg-main z-[-1]"></div>
+        {/* Subtle Ambient Glow - Top Center */}
+        <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-accent/5 blur-[120px] rounded-full pointer-events-none z-0 opacity-20"></div>
+
+		<slot />
+
+		<noscript><img height="1" width="1" style="display:none"
+			src="https://www.facebook.com/tr?id=1157587412986407&ev=PageView&noscript=1"
+		/></noscript>
+		<noscript><img height="1" width="1" style="display:none"
+			src="https://www.facebook.com/tr?id=1423308999460892&ev=PageView&noscript=1"
+		/></noscript>
+	</body>
+</html>

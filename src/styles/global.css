@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto:wght@400;500&family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		@apply bg-main text-primary font-body antialiased selection:bg-accent/30 selection:text-white;
+		overflow-x: hidden;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-sans font-extrabold tracking-tight;
+	}
+}
+
+@layer components {
+	.glass-card {
+		@apply bg-surface/80 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:border-accent/40 transition-colors duration-500;
+	}
+
+	.btn-primary {
+		@apply px-8 py-4 bg-accent text-white font-semibold rounded-full shadow-[0_0_20px_rgba(59, 130, 246, 0.5)] hover:bg-accent-dark transition-all duration-300 hover:-translate-y-1 block text-center w-full md:w-auto;
+	}
+
+	.btn-secondary {
+		@apply px-8 py-4 bg-transparent border border-white/10 text-white font-semibold rounded-full hover:bg-white/5 transition-all duration-300 block text-center w-full md:w-auto;
+	}
+}
+
+@layer utilities {
+	.text-glow {
+		text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+	}
+
+	.border-glow {
+		box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+	}
+}
+
+/* ──────────────────────────────────────────────────────────
+   Scroll-Reveal Animation System
+   ────────────────────────────────────────────────────────── */
+
+.reveal {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+	will-change: opacity, transform;
+}
+
+.reveal.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Stagger delays for cascading children */
+.reveal-delay-1 {
+	transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+	transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+	transition-delay: 0.3s;
+}
+
+.reveal-delay-4 {
+	transition-delay: 0.4s;
+}
+
+.reveal-delay-5 {
+	transition-delay: 0.5s;
+}
+
+.reveal-delay-6 {
+	transition-delay: 0.6s;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+	.reveal {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}
