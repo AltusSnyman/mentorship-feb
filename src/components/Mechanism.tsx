@@ -50,16 +50,36 @@ export default function Mechanism() {
                             New Skillset
                         </div>
                         <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
-                            The "Vibe Coding"<br />Protocol.
+                            The "Vibe Coding" Protocol.<br />
+                            <span className="text-accent">The End of Templates.</span>
                         </h2>
                         <p className="text-gray-400 text-lg leading-relaxed font-body">
-                            AI moves too fast for templates. We teach you to "Vibe Code"—using natural language to build custom apps with Lovable & Antigravity. You don't write code; you speak it.
+                            Templates are a commodity. Custom software is an asset. We teach you how to use Lovable, Antigravity, and Cursor to build enterprise-grade applications just by typing in plain English. Stop reselling the same GHL snapshot as everyone else. Start building custom IP.
                         </p>
-                        <div className="pt-4">
-                            <Button variant="secondary" className="border-accent text-accent hover:bg-accent hover:text-black">
-                                View The Academy Curriculum
-                            </Button>
-                        </div>
+                        <ul className="space-y-4 pt-4">
+                            {[
+                                {
+                                    title: 'Natural Language Dev',
+                                    desc: 'Type "Build a Real Estate CRM" and watch the code write itself in real-time.'
+                                },
+                                {
+                                    title: 'Full-Stack Authority',
+                                    desc: 'Create databases, front-ends, and API connections without learning a single line of React or Python.'
+                                },
+                                {
+                                    title: 'Commercial Rights',
+                                    desc: 'You own the code you generate. Sell these custom tools to clients for $5k - $10k setup fees.'
+                                }
+                            ].map((item, index) => (
+                                <li key={index} className="flex items-start gap-3 text-white/90">
+                                    <span className="text-accent mt-1 shrink-0">✓</span>
+                                    <span>
+                                        <strong className="text-white block mb-1">{item.title}:</strong>
+                                        <span className="text-gray-400 text-sm">{item.desc}</span>
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
 
                     {/* Visual (Right) */}
