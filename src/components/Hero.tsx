@@ -38,9 +38,9 @@ export default function Hero() {
 
             {/* 3. CTA Button (Formerly 4) */}
             <div className="relative z-10 flex flex-col items-center gap-4">
-                <button className="px-10 py-5 bg-accent text-black font-extrabold text-lg tracking-wide rounded-sm shadow-[0_0_30px_rgba(0,240,255,0.5)] hover:bg-[#33F4FF] hover:shadow-[0_0_50px_rgba(0,240,255,0.7)] hover:-translate-y-1 transition-all duration-300 uppercase">
+                <a href="https://github.com/AltusSnyman/mentorship-feb.git" className="px-10 py-5 bg-accent text-black font-extrabold text-lg tracking-wide rounded-sm shadow-[0_0_30px_rgba(0,240,255,0.5)] hover:bg-[#33F4FF] hover:shadow-[0_0_50px_rgba(0,240,255,0.7)] hover:-translate-y-1 transition-all duration-300 uppercase">
                     Start The 5-Day Agency Sprint
-                </button>
+                </a>
 
                 {/* 4. Trust Text (Formerly 5) */}
                 <p className="text-sm text-gray-400 font-mono tracking-wide">

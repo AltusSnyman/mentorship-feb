@@ -65,9 +65,9 @@ export default function OfferStack() {
 
                     {/* CTA */}
                     <div className="mt-8 reveal reveal-delay-4">
-                        <button className="w-full py-5 bg-accent text-black font-extrabold text-lg uppercase tracking-wider hover:bg-[#33F4FF] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] transition-all duration-300">
+                        <a href="https://github.com/AltusSnyman/mentorship-feb.git" className="block w-full text-center py-5 bg-accent text-black font-extrabold text-lg uppercase tracking-wider hover:bg-[#33F4FF] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] transition-all duration-300">
                             Claim My Founder's Rate
-                        </button>
+                        </a>
                         <div className="flex justify-center items-center gap-2 mt-4 text-xs text-gray-500">
                             <span className="w-2 h-2 rounded-full bg-green-500"></span>
                             <span>Secure Checkout • Cancel Anytime</span>
