@@ -104,7 +104,7 @@ export default function OfferStack() {
                         {/* CTA Button */}
                         <div className="text-center">
                             <a
-                                href="https://github.com/AltusSnyman/mentorship-feb.git"
+                                href="https://app.gohighlevel.com/v2/preview/O4GBs6uRUtGi8iPesP0m"
                                 className="inline-block w-full md:w-auto px-12 py-5 bg-[#00F0FF] text-black font-extrabold text-xl rounded-lg hover:bg-[#33F4FF] hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(0,240,255,0.5)] uppercase tracking-wide"
                             >
                                 Claim My Founder's Rate
