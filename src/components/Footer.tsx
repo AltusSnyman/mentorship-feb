@@ -27,9 +27,9 @@ export default function Footer() {
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-center gap-6 text-xs text-gray-600 font-medium uppercase tracking-wider">
-                    <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
-                    <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" className="hover:text-white transition-colors">Contact Us</a>
+                    <a href="/terms" className="hover:text-white transition-colors">Terms & Conditions</a>
+                    <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="/contact" className="hover:text-white transition-colors">Contact Us</a>
                 </div>
 
                 <p className="text-[11px] text-gray-500 max-w-4xl mx-auto leading-relaxed text-justify">
