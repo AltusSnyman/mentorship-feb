@@ -15,8 +15,24 @@ const { title } = Astro.props;
 		<meta name="description" content="Launch your AI Agency with the Vibe Coding Protocol. Get the unlimited 'Smart Hybrid' infrastructure, 40+ N8N workflows, and the 5-day launch sprint." />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Agency Infrastructure Bundle | Vibe Coding Protocol</title>
+		<title>{title}</title>
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={Astro.url} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content="Launch your AI Agency with the Vibe Coding Protocol. Get the unlimited 'Smart Hybrid' infrastructure, 40+ N8N workflows, and the 5-day launch sprint." />
+        <meta property="og:image" content={new URL('/assets/smart-hybrid-dashboard.png', Astro.url)} />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={Astro.url} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content="Launch your AI Agency with the Vibe Coding Protocol. Get the unlimited 'Smart Hybrid' infrastructure, 40+ N8N workflows, and the 5-day launch sprint." />
+        <meta property="twitter:image" content={new URL('/assets/smart-hybrid-dashboard.png', Astro.url)} />
 
 		<!-- Meta Pixel Code -->
 		<script is:inline>
