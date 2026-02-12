@@ -9,6 +9,16 @@ const stackItems = [
         value: '$497/mo',
     },
     {
+        title: 'SaaS Snapshot',
+        subtitle: 'GHL Ultimate Collection of Saas SaaS Snapshot / Websites Funnels Chatbots',
+        value: '$4,997',
+    },
+    {
+        title: 'Unlimited 123 Niche Specific Snapshots',
+        subtitle: '123 Niche Ready Snapshots Websites Ready to Launch',
+        value: '$2,297',
+    },
+    {
         title: 'The "Vibe Coding" Automation Vault',
         subtitle: '(40+ N8N Workflows + 120+ Industry Snapshots)',
         value: '$3,500',
@@ -78,7 +88,7 @@ export default function OfferStack() {
                             <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-lg">
                                 <span className="text-[#A3A3A3] uppercase tracking-widest">Total Value</span>
                                 <span className="text-red-500 font-bold line-throughDecoration-red-500 line-through decoration-2">
-                                    $11,490+
+                                    $18,784+
                                 </span>
                             </div>
 
